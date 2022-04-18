@@ -40,10 +40,8 @@ def clickCompare():
 
 def cleantl():
     input2.delete("1.0", END)
-    #Start of modified version of Yury's code
     sremoved = re.sub(r"\s+", " ", input1.get("1.0", END))
     finaltext = sremoved.replace('[', '\n').replace(']', '').replace('AM', 'AM -').replace('PM', 'PM -').replace('Edited', '').replace('(1 liked)', '').replace('(2 liked)', '').replace('(3 liked)', '').replace('(4 liked)', '').replace('(5 liked)', '').replace('(6 liked)', '').replace('(7 liked)', '').replace('(8 liked)', '').replace('(9 liked)', '')
-    #End of modified version of Yury's code
     input2.insert(INSERT, finaltext)
 
 def uploadLeft():
