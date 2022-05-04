@@ -32,6 +32,11 @@ def clickCompare():
         if element >= len(arrayInput2):
             maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
             textInputField1.tag_add("Error", num, maxInput1)
+        if arrayInput1[element] == arrayInput2[element]:
+            maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
+            maxInput2 = float(str(element + 1) + '.' + str(len(arrayInput2[element])))
+            textInputField1.tag_remove("Error", num, maxInput1)
+            textInputField2.tag_remove("Error", num, maxInput2)
         if arrayInput1[element] != arrayInput2[element]:
             maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
             maxInput2 = float(str(element + 1) + '.' + str(len(arrayInput2[element])))
