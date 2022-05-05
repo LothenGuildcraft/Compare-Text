@@ -30,26 +30,20 @@ def clickCompare():
     for element in range(len(arrayInput1)):
         num = element + 1.0
         if element >= len(arrayInput2):
-            maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
-            textInputField1.tag_add("Error", num, maxInput1)
+            textInputField1.tag_add("Error", num, num + 1)
         if arrayInput1[element] == arrayInput2[element]:
-            maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
-            maxInput2 = float(str(element + 1) + '.' + str(len(arrayInput2[element])))
-            textInputField1.tag_remove("Error", num, maxInput1)
-            textInputField2.tag_remove("Error", num, maxInput2)
+            textInputField1.tag_remove("Error", num, num + 1)
+            textInputField2.tag_remove("Error", num, num + 1)
         if arrayInput1[element] != arrayInput2[element]:
-            maxInput1 = float(str(element + 1) + '.' + str(len(arrayInput1[element])))
-            maxInput2 = float(str(element + 1) + '.' + str(len(arrayInput2[element])))
-            textInputField1.tag_add("Error", num, maxInput1)
-            textInputField2.tag_add("Error", num, maxInput2)
+            textInputField1.tag_add("Error", num, num + 1)
+            textInputField2.tag_add("Error", num, num + 1)
         if (element + 1 == len(arrayInput1)) and (element + 1 < len(arrayInput2)):
             for x in range(element + 1, len(arrayInput2)):
                 num = x + 1.0
-                maxInput2 = float(str(x + 1) + '.' + str(len(arrayInput2[x])))
-                textInputField2.tag_add("Error", num, maxInput2)
+                textInputField2.tag_add("Error", num, num + 1)
 
-        textInputField1.tag_config("Error", background="red")
-        textInputField2.tag_config("Error", background="red")
+    textInputField1.tag_config("Error", background="red")
+    textInputField2.tag_config("Error", background="red")
 
 def cleantl():
     textInputField2.delete("1.0", END)
