@@ -21,12 +21,8 @@ textInputField2 = Text(mainFrame, bd=4)
 buttonFrame = Frame(mainFrame)
 
 def clickCompare():
-    arrayInput1 = []
-    arrayInput2 = []
-    for line in textInputField1.get('1.0', END).splitlines():
-        arrayInput1.append(line)
-    for line in textInputField2.get('1.0', END).splitlines():
-        arrayInput2.append(line)
+    arrayInput1 = textInputField1.get('1.0', END).splitlines()
+    arrayInput2 = textInputField2.get('1.0', END).splitlines()
     for element in range(len(arrayInput1)):
         num = element + 1.0
         if element >= len(arrayInput2):
