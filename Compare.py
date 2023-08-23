@@ -6,8 +6,9 @@ import re
 root = Tk()
 root.title("Compare text")
 root.configure(width=1420, height=500)
-root.rowconfigure(0, weight=1)
-root.columnconfigure(0, weight=1)
+# TODO Test the next two lines on Windows computer
+#root.rowconfigure(0, weight=1)
+#root.columnconfigure(0, weight=1)
 
 # Create the main viewable frame in the app
 mainFrame = Frame(root)
@@ -27,6 +28,7 @@ def clickCompare():
         num = element + 1.0
         if element >= len(arrayInput2):
             textInputField1.tag_add("Error", num, num + 1)
+            continue
         if arrayInput1[element] == arrayInput2[element]:
             textInputField1.tag_remove("Error", num, num + 1)
             textInputField2.tag_remove("Error", num, num + 1)
